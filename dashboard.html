@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Controle do Carrinho</title>
+  <link rel="stylesheet" href="dashboard.css"/>
+</head>
+<body>
+
+  <header>
+    <span class="logo-text">Painel de Controle</span>
+    <button class="btn-sair" onclick="sair()">Sair</button>
+  </header>
+
+  <main>
+
+    <!-- ABAS -->
+    <div class="abas">
+      <button class="aba ativa" onclick="trocarAba('controles')">Controles</button>
+      <button class="aba" onclick="trocarAba('tutorial')">Tutorial</button>
+    </div>
+
+    <!-- TELA CONTROLES -->
+    <div id="tela-controles">
+      <p class="status" id="status-msg">Aguardando comando...</p>
+
+      <div class="controle">
+        <div class="linha">
+          <button class="btn-dir" onmousedown="enviar('frente')" onmouseup="enviar('parar')" ontouchstart="enviar('frente')" ontouchend="enviar('parar')">▲</button>
+        </div>
+        <div class="linha">
+          <button class="btn-dir" onmousedown="enviar('esquerda')" onmouseup="enviar('parar')" ontouchstart="enviar('esquerda')" ontouchend="enviar('parar')">◄</button>
+          <button class="btn-dir parar" onmousedown="enviar('parar')" onmouseup="enviar('parar')">■</button>
+          <button class="btn-dir" onmousedown="enviar('direita')" onmouseup="enviar('parar')" ontouchstart="enviar('direita')" ontouchend="enviar('parar')">►</button>
+        </div>
+        <div class="linha">
+          <button class="btn-dir" onmousedown="enviar('tras')" onmouseup="enviar('parar')" ontouchstart="enviar('tras')" ontouchend="enviar('parar')">▼</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- TELA TUTORIAL -->
+    <div id="tela-tutorial" style="display:none;">
+      <div class="tutorial">
+        <h2>Como usar o controle</h2>
+
+        <div class="passo">
+          <span class="icone">▲</span>
+          <div>
+            <strong>Frente</strong>
+            <p>Pressione e segure para o carrinho avançar.</p>
+          </div>
+        </div>
+
+        <div class="passo">
+          <span class="icone">▼</span>
+          <div>
+            <strong>Ré</strong>
+            <p>Pressione e segure para o carrinho recuar.</p>
+          </div>
+        </div>
+
+        <div class="passo">
+          <span class="icone">◄</span>
+          <div>
+            <strong>Esquerda</strong>
+            <p>Pressione e segure para virar à esquerda.</p>
+          </div>
+        </div>
+
+        <div class="passo">
+          <span class="icone">►</span>
+          <div>
+            <strong>Direita</strong>
+            <p>Pressione e segure para virar à direita.</p>
+          </div>
+        </div>
+
+        <div class="passo">
+          <span class="icone">■</span>
+          <div>
+            <strong>Parar</strong>
+            <p>Pressione para parar o carrinho imediatamente.</p>
+          </div>
+        </div>
+
+        <div class="aviso">
+          <strong>Atenção:</strong> os botões funcionam enquanto estiverem pressionados. Soltar o botão para o carrinho automaticamente.
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <script src="dashboard.js"></script>
+
+</body>
+</html>

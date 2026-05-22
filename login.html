@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<div class="card">
+
+  <!-- TELA DE LOGIN -->
+  <div id="tela-login">
+
+    <h1>Bem-vindo</h1>
+    <p class="subtitle">Faça login para continuar</p>
+
+    <div class="field">
+      <label for="usuario">Usuário</label>
+      <input type="text" id="usuario" placeholder="Digite seu usuário" autocomplete="username"/>
+    </div>
+
+    <div class="field">
+      <label for="senha">Senha</label>
+      <input type="password" id="senha" placeholder="••••••••" autocomplete="current-password"/>
+    </div>
+
+    <div class="error-msg" id="erro-login">Usuário ou senha incorretos.</div>
+
+    <button class="btn" onclick="fazerLogin()">Entrar</button>
+    <button class="btn btn-secondary" onclick="mostrarTela('cadastro')">Cadastre-se</button>
+  </div>
+
+  <!-- TELA DE CADASTRO -->
+  <div id="tela-cadastro" class="cadastro">
+    <h1>Criar conta</h1>
+    <p class="subtitle">Preencha os dados para se cadastrar</p>
+
+    <div class="field">
+      <label for="novo-usuario">Usuário</label>
+      <input type="text" id="novo-usuario" placeholder="Escolha um usuário"/>
+    </div>
+
+    <div class="field">
+      <label for="nova-senha">Senha</label>
+      <input type="password" id="nova-senha" placeholder="••••••••"/>
+    </div>
+
+    <div class="error-msg" id="erro-cadastro">Preencha todos os campos.</div>
+
+    <button class="btn" onclick="fazerCadastro()">Cadastrar</button>
+    <button class="btn btn-secondary" onclick="mostrarTela('login')">← Voltar</button>
+  </div>
+
+  <!-- TELA DE BOAS-VINDAS -->
+  <div id="tela-bemvindo" class="welcome">
+    <div class="welcome-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2" stroke-linecap="round">
+        <polyline points="20 6 9 17 4 12"/>
+      </svg>
+    </div>
+    <h2 id="nome-usuario"></h2>
+    <p>Você está logado com sucesso.</p>
+    <button class="btn" onclick="sair()">Sair</button>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
